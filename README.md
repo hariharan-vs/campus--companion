@@ -25,17 +25,27 @@ npm or bun
 Supabase account (for backend services)
 Installation
 Clone the repository
+git clone https://github.com/hariharan-vs/campus--companion.git
+cd campus-companion
 
 Install dependencies
 
+npm install
+# or
+bun install
+
 Set up Supabase
+
+npx supabase db push
 
 Create a new project at supabase.com
 Copy your project URL and anon key
 Update the Supabase configuration in client.ts
 Run the database migrations:
 Start the development server
-
+npm run dev
+# or
+bun run dev
 Open your browser
 
 Navigate to http://localhost:5173 to view the application.
@@ -49,6 +59,19 @@ npm run lint - Run ESLint for code linting
 npm run test - Run tests once
 npm run test:watch - Run tests in watch mode
 Project Structure
+
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # Shadcn UI components
+│   └── ...             # App-specific components
+├── contexts/           # React contexts (Auth, etc.)
+├── hooks/              # Custom React hooks
+├── integrations/       # External service integrations
+│   └── supabase/       # Supabase client and types
+├── lib/                # Utility functions and configurations
+├── pages/              # Page components for routing
+└── test/               # Test files
+
 Contributing
 Fork the repository
 Create a feature branch (git checkout -b feature/amazing-feature)
