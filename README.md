@@ -1,85 +1,261 @@
-Campus Companion
-A comprehensive web application designed to enhance the campus experience for students. Campus Companion provides essential tools for navigation, scheduling, support, and staying informed about campus activities.
+# Campus Companion
 
-Features
-Interactive Campus Map: Navigate the campus with ease using the integrated map feature
-Academic Schedule: View and manage your class schedule and important academic dates
-Support Tickets: Submit and track support requests for technical issues, facilities, or other campus services
-Announcements: Stay updated with the latest campus news, events, and important notices
-User Profile: Manage your personal information and preferences
-Secure Authentication: User registration and login with password reset functionality
-Tech Stack
-Frontend: React 18 with TypeScript
-Build Tool: Vite
-Styling: Tailwind CSS with Shadcn UI components
-Backend: Supabase (PostgreSQL database, authentication, real-time subscriptions)
-State Management: React Query (TanStack Query)
-Forms: React Hook Form with validation
-Routing: React Router
-Testing: Vitest for unit tests, Playwright for E2E testing
-Linting: ESLint
-Package Manager: npm (with Bun lockfile support)
-Prerequisites
-Node.js (version 18 or higher)
-npm or bun
-Supabase account (for backend services)
-Installation
-Clone the repository
+A comprehensive web application designed to enhance the campus experience for students. **Campus Companion** provides essential tools for navigation, scheduling, support, and staying informed about campus activities.
+
+---
+
+# Features
+
+### Interactive Campus Map
+
+Navigate the campus easily using an integrated map interface.
+
+### Academic Schedule
+
+View and manage your class schedules and important academic events.
+
+### Support Tickets
+
+Submit and track support requests for technical issues, facilities, or campus services.
+
+### Announcements
+
+Stay updated with the latest campus news, events, and important notifications.
+
+### User Profile
+
+Manage personal information and user preferences.
+
+### Secure Authentication
+
+User registration and login system with password reset functionality.
+
+---
+
+# Tech Stack
+
+**Frontend**
+
+* React 18
+* TypeScript
+* Vite
+
+**Styling**
+
+* Tailwind CSS
+* Shadcn UI Components
+
+**Backend**
+
+* Supabase (PostgreSQL Database, Authentication, Real-time subscriptions)
+
+**State Management**
+
+* React Query (TanStack Query)
+
+**Forms**
+
+* React Hook Form with validation
+
+**Routing**
+
+* React Router
+
+**Testing**
+
+* Vitest (Unit Testing)
+* Playwright (End-to-End Testing)
+
+**Code Quality**
+
+* ESLint
+
+**Package Manager**
+
+* npm (Bun lockfile support included)
+
+---
+
+# Prerequisites
+
+Before running the project, ensure you have:
+
+* Node.js (version 18 or higher)
+* npm or bun
+* Supabase account for backend services
+
+---
+
+# Installation
+
+## 1. Clone the repository
+
+```bash
 git clone https://github.com/hariharan-vs/campus--companion.git
 cd campus-companion
+```
 
-Install dependencies
+## 2. Install dependencies
 
+```bash
 npm install
-# or
+```
+
+or
+
+```bash
 bun install
+```
 
-Set up Supabase
+---
 
+# Supabase Setup
+
+### 1. Create a Supabase Project
+
+Go to https://supabase.com and create a new project.
+
+### 2. Get Project Credentials
+
+Copy the following from the project dashboard:
+
+* Project URL
+* Anon Public Key
+
+### 3. Update Configuration
+
+Update the Supabase configuration inside:
+
+```
+src/integrations/supabase/client.ts
+```
+
+### 4. Run Database Migrations
+
+```bash
 npx supabase db push
+```
 
-Create a new project at supabase.com
-Copy your project URL and anon key
-Update the Supabase configuration in client.ts
-Run the database migrations:
-Start the development server
+---
+
+# Running the Application
+
+Start the development server:
+
+```bash
 npm run dev
-# or
+```
+
+or
+
+```bash
 bun run dev
-Open your browser
+```
 
-Navigate to http://localhost:5173 to view the application.
+Open your browser and navigate to:
 
-Available Scripts
-npm run dev - Start the development server
-npm run build - Build the project for production
-npm run build:dev - Build the project in development mode
-npm run preview - Preview the production build locally
-npm run lint - Run ESLint for code linting
-npm run test - Run tests once
-npm run test:watch - Run tests in watch mode
-Project Structure
+```
+http://localhost:5173
+```
 
+---
+
+# Available Scripts
+
+```bash
+npm run dev
+```
+
+Start the development server.
+
+```bash
+npm run build
+```
+
+Build the project for production.
+
+```bash
+npm run build:dev
+```
+
+Build the project in development mode.
+
+```bash
+npm run preview
+```
+
+Preview the production build locally.
+
+```bash
+npm run lint
+```
+
+Run ESLint for code linting.
+
+```bash
+npm run test
+```
+
+Run tests once.
+
+```bash
+npm run test:watch
+```
+
+Run tests in watch mode.
+
+---
+
+# Project Structure
+
+```
 src/
 ├── components/          # Reusable UI components
-│   ├── ui/             # Shadcn UI components
-│   └── ...             # App-specific components
-├── contexts/           # React contexts (Auth, etc.)
-├── hooks/              # Custom React hooks
-├── integrations/       # External service integrations
-│   └── supabase/       # Supabase client and types
-├── lib/                # Utility functions and configurations
-├── pages/              # Page components for routing
-└── test/               # Test files
+│   ├── ui/              # Shadcn UI components
+│   └── other-components
+├── contexts/            # React contexts (Auth etc.)
+├── hooks/               # Custom React hooks
+├── integrations/        # External integrations
+│   └── supabase/        # Supabase client and types
+├── lib/                 # Utility functions
+├── pages/               # Application pages
+└── test/                # Test files
+```
 
-Contributing
-Fork the repository
-Create a feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add some amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
 
-Support
-If you encounter any issues or have questions, please create an issue in this repository or contact the development team.
+# Contributing
+
+1. Fork the repository
+2. Create a new feature branch
+
+```
+git checkout -b feature/amazing-feature
+```
+
+3. Commit your changes
+
+```
+git commit -m "Add some amazing feature"
+```
+
+4. Push to your branch
+
+```
+git push origin feature/amazing-feature
+```
+
+5. Open a Pull Request
+---
+
+# Support
+
+If you encounter any issues or have questions, please create an **issue in this repository**.
+
+---
+
+# Author
+
+**Hariharan VS**
+
+Engineering Student | Developer | Tech Enthusiast
