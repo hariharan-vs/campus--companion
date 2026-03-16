@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 10% 97%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 155 55% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 12% 90%;
+    --secondary-foreground: 220 20% 15%;
+
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 220 12% 90%;
+    --accent-foreground: 220 20% 15%;
+
+    --destructive: 20 50% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 12% 90%;
+    --input: 220 12% 90%;
+    --ring: 155 55% 40%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 155 55% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 12% 94%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 220 12% 90%;
+    --sidebar-ring: 155 55% 40%;
+
+    /* Custom tokens */
+    --surface-elevated: 0 0% 100%;
+    --now-card-bg: 220 20% 15%;
+    --now-card-fg: 220 10% 97%;
+    --status-resolved: 155 55% 40%;
+    --status-pending: 20 50% 45%;
+    --status-in-progress: 45 80% 50%;
+    --nav-height: 64px;
+    --card-radius: 24px;
+    --inner-radius: 16px;
+    --button-radius: 12px;
+
+    --shadow-surface: 0 2px 4px rgba(0,0,0,0.02), 0 12px 24px rgba(0,0,0,0.03);
+    --shadow-focus: 0 0 0 3px hsl(155 55% 40% / 0.2);
+
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'Geist', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Geist Mono', monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .card-surface {
+    @apply bg-card rounded-[var(--card-radius)] border;
+    box-shadow: var(--shadow-surface);
+  }
+  .now-card {
+    @apply rounded-[var(--card-radius)] p-6;
+    background: hsl(var(--now-card-bg));
+    color: hsl(var(--now-card-fg));
+  }
+  .status-dot {
+    @apply w-1.5 h-1.5 rounded-full inline-block;
+  }
+  .status-dot-resolved {
+    background: hsl(var(--status-resolved));
+  }
+  .status-dot-pending {
+    background: hsl(var(--status-pending));
+  }
+  .status-dot-progress {
+    background: hsl(var(--status-in-progress));
+  }
+  .bottom-nav {
+    height: var(--nav-height);
+    @apply backdrop-blur-xl bg-card/80 border-t;
+  }
+}
